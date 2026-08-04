@@ -38,7 +38,7 @@ export function ToolInterface({ tool }: ToolInterfaceProps) {
       formData.append('type', selectedPageType);
       // formData.append('type', tool.slug); // tool type // optional
 
-      const res = await fetch('https://flipkart-label-cropper-production.up.railway.app/api/process', {
+      const res = await fetch('https://transform-label-production.up.railway.app/api/process', {
         method: 'POST',
         body: formData,
       });
@@ -67,7 +67,7 @@ export function ToolInterface({ tool }: ToolInterfaceProps) {
     pollingRef.current = setInterval(async () => {
       try {
         const res = await fetch(
-          `https://flipkart-label-cropper-production.up.railway.app/api/status/${jobId}`
+          `https://transform-label-production.up.railway.app/api/status/${jobId}`
         );
         const data = await res.json();
 
